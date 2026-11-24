@@ -1,0 +1,24 @@
+{
+  "aggregate": {
+    "D1_median_ratio_of_medians": {
+      "geomean": 1.0805624359978503,
+      "faster_count": 7,
+      "ci_excludes_1_D1": 3,
+      "ci_excludes_1_D2": 3,
+      "min": 0.6719528762565986,
+      "max": 1.4255539019539873
+    },
+    "D2_median_paired_ratio": {
+      "geomean": 1.1099397143001166,
+      "faster_count": 6,
+      "ci_excludes_1_D1": 3,
+      "ci_excludes_1_D2": 3,
+      "min": 0.9590116849775131,
+      "max": 1.3315560154562553
+    }
+  },
+  "integrity_issues": [],
+  "samples_per_cell": 17,
+  "bootstrap_repeats": 20000,
+  "bootstrap_seed": 20261130
+}

@@ -1,0 +1,17 @@
+--- normal exit=0 ---
+identity A: _sinkhorn.py sha256=71ee6030e5dffc4dff9b0200a8d2f2317da5e2546102e0f478d1b247bafe2592 OK
+identity B: _sinkhorn_candidate.py sha256=586f71bb1a80af5260139df663387df96f301d7a5034f6a2ea2975c75e87ea61 OK
+identity C: residual-sinkhorn 0.2.0 at <ADAPTER_ENV>
+BUILD_OK 0.2.0
+
+--- swapped A/B (must be rejected) exit=1 ---
+IDENTITY GUARD: A source hash 586f71bb1a80af5260139df663387df96f301d7a5034f6a2ea2975c75e87ea61 != 71ee6030e5dffc4dff9b0200a8d2f2317da5e2546102e0f478d1b247bafe2592 (looks like the patched candidate: A/B appear SWAPPED); run prepare_candidate.py on a pristine POT 0.9.7.post1 tree
+
+--- restored (must pass again) exit=0 ---
+identity A: _sinkhorn.py sha256=71ee6030e5dffc4dff9b0200a8d2f2317da5e2546102e0f478d1b247bafe2592 OK
+identity B: _sinkhorn_candidate.py sha256=586f71bb1a80af5260139df663387df96f301d7a5034f6a2ea2975c75e87ea61 OK
+identity C: residual-sinkhorn 0.2.0 at <ADAPTER_ENV>
+BUILD_OK 0.2.0
+
+SUMMARY {'normal_rc': 0, 'swap_rc': 1, 'restored_rc': 0}
+PASS: identity guard rejects swapped A/B and accepts correct setup

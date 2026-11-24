@@ -1,0 +1,14 @@
+{
+  "python": "3.13.1",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "pot": "0.9.7.post1",
+  "residual_sinkhorn_recorded": "0.2.0",
+  "residual_sinkhorn_later_fix_not_used": "0.2.1",
+  "platform": "Windows, CPython 3.13.1",
+  "dtype": "float64",
+  "threads": {"OPENBLAS_NUM_THREADS": "1", "OMP_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
+  "solver_kwargs": {"log": false, "stopThr": 1e-7, "numItermax": 3000},
+  "timing": {"warmup": 3, "repeats": 17, "shuffled_order": true, "seed": 20261129},
+  "statistics": {"bootstrap_seed": 20261130, "bootstrap_repeats": 20000, "primary": "D1 = median(X_i)/median(Y_i)"}
+}

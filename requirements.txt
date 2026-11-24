@@ -1,0 +1,7 @@
+# Runtime environment recorded for the published experiment
+numpy==2.5.3
+scipy==1.18.1
+POT==0.9.7.post1
+# Python 3.13.1; single BLAS/OMP thread set via environment variables.
+# residual-sinkhorn 0.2.0 is NOT on PyPI: install the author's pinned wheel
+# manually as documented in README.md before running the benchmark.

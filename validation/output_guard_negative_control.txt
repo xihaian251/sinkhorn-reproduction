@@ -1,0 +1,3 @@
+=== output guard negative controls ===
+OUTPUT GUARD: tag 'phase32' is reserved for frozen historical data; choose e.g. --tag repro or --tag short
+OUTPUT GUARD: refusing to overwrite existing output file(s): <PATH>, <PATH>, <PATH> (use --force to replace non-reserved outputs)

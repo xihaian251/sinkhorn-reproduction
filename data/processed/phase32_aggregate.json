@@ -1,0 +1,144 @@
+{
+  "primary_definition": "D1 = median(X_i)/median(Y_i) per fixture, geomean over fixtures",
+  "secondary_definition": "D2 = median(X_i/Y_i) per fixture, geomean over fixtures",
+  "bootstrap": {
+    "seed": 20261130,
+    "repeats": 20000,
+    "unit": "paired repeat index"
+  },
+  "cold_warm_pools_are_independent": true,
+  "aggregate": {
+    "COLD": {
+      "A/B_D1_ratio_of_medians": {
+        "geomean": 1.1610680466370709,
+        "faster_count": 8,
+        "ci_excludes_1_count": 1,
+        "min": 1.009658501209198,
+        "max": 1.3916972366149059
+      },
+      "A/B_D2_median_paired_ratio": {
+        "geomean": 1.1115690798763156,
+        "faster_count": 8,
+        "ci_excludes_1_count": 3,
+        "min": 1.0779202861522443,
+        "max": 1.1581639510355577
+      },
+      "A/C_D1_ratio_of_medians": {
+        "geomean": 1.5680850830623865,
+        "faster_count": 8,
+        "ci_excludes_1_count": 5,
+        "min": 1.2157840046072905,
+        "max": 2.3511491652544834
+      },
+      "A/C_D2_median_paired_ratio": {
+        "geomean": 1.564837660444262,
+        "faster_count": 8,
+        "ci_excludes_1_count": 7,
+        "min": 1.2684001841468235,
+        "max": 2.5350579095703405
+      },
+      "B/C_D1_ratio_of_medians": {
+        "geomean": 1.3505539900130779,
+        "faster_count": 8,
+        "ci_excludes_1_count": 5,
+        "min": 1.0571302040840067,
+        "max": 2.2786332092177943
+      },
+      "B/C_D2_median_paired_ratio": {
+        "geomean": 1.3904609835709805,
+        "faster_count": 8,
+        "ci_excludes_1_count": 5,
+        "min": 1.154735572672548,
+        "max": 2.4828159986285496
+      }
+    },
+    "WARM": {
+      "A/B_D1_ratio_of_medians": {
+        "geomean": 1.0288585711970073,
+        "faster_count": 5,
+        "ci_excludes_1_count": 0,
+        "min": 0.807376436894344,
+        "max": 1.2728526312879103
+      },
+      "A/B_D2_median_paired_ratio": {
+        "geomean": 1.0276227396480315,
+        "faster_count": 6,
+        "ci_excludes_1_count": 0,
+        "min": 0.8499089743588895,
+        "max": 1.124424260530073
+      },
+      "A/C_D1_ratio_of_medians": {
+        "geomean": 1.629012927544004,
+        "faster_count": 8,
+        "ci_excludes_1_count": 6,
+        "min": 1.1560056209435297,
+        "max": 2.7003696679842184
+      },
+      "A/C_D2_median_paired_ratio": {
+        "geomean": 1.6755161418336275,
+        "faster_count": 8,
+        "ci_excludes_1_count": 6,
+        "min": 1.2384699489669897,
+        "max": 2.661740337881362
+      },
+      "B/C_D1_ratio_of_medians": {
+        "geomean": 1.5833205584794396,
+        "faster_count": 8,
+        "ci_excludes_1_count": 6,
+        "min": 1.2095448075121848,
+        "max": 2.5582501649684453
+      },
+      "B/C_D2_median_paired_ratio": {
+        "geomean": 1.6403798781422205,
+        "faster_count": 8,
+        "ci_excludes_1_count": 6,
+        "min": 1.26302144334284,
+        "max": 2.449758302969336
+      }
+    },
+    "MARGINALS": {
+      "A/B_D1_ratio_of_medians": {
+        "geomean": 1.0456981883436203,
+        "faster_count": 1,
+        "ci_excludes_1_count": 0,
+        "min": 0.8385982153002542,
+        "max": 1.3811432602641676
+      },
+      "A/B_D2_median_paired_ratio": {
+        "geomean": 1.0606202243434357,
+        "faster_count": 2,
+        "ci_excludes_1_count": 1,
+        "min": 0.9095560477852483,
+        "max": 1.295798323335391
+      },
+      "A/C_D1_ratio_of_medians": {
+        "geomean": 1.834897335820076,
+        "faster_count": 3,
+        "ci_excludes_1_count": 3,
+        "min": 1.4379276536530392,
+        "max": 2.5118858936132775
+      },
+      "A/C_D2_median_paired_ratio": {
+        "geomean": 1.9283732263324809,
+        "faster_count": 3,
+        "ci_excludes_1_count": 3,
+        "min": 1.6087920447951718,
+        "max": 2.5801725360140946
+      },
+      "B/C_D1_ratio_of_medians": {
+        "geomean": 1.7547102560505938,
+        "faster_count": 3,
+        "ci_excludes_1_count": 3,
+        "min": 1.4565004777736565,
+        "max": 2.039597324088342
+      },
+      "B/C_D2_median_paired_ratio": {
+        "geomean": 1.7697667423888908,
+        "faster_count": 3,
+        "ci_excludes_1_count": 3,
+        "min": 1.6772983105226373,
+        "max": 1.9402985147285279
+      }
+    }
+  }
+}

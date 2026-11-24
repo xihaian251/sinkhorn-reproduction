@@ -1,0 +1,32 @@
+{
+  "wheel_sha256": "d7099ea4dbad90242bf7318e2235c18cad579e43d3312faa8bfc76e78c854759",
+  "record_all_ok": true,
+  "package": "residual-sinkhorn",
+  "version": "0.2.0",
+  "files": [
+    "residual_sinkhorn/__init__.py",
+    "dist-info/METADATA",
+    "dist-info/RECORD",
+    "dist-info/WHEEL",
+    "dist-info/top_level.txt"
+  ],
+  "dependencies": [
+    "POT>=0.9.7,<=0.9.7.post1",
+    "numpy>=1.24",
+    "Python>=3.10"
+  ],
+  "network_calls": false,
+  "file_writes": false,
+  "subprocess_eval_exec": false,
+  "import_side_effects": [
+    "thread-local cache object",
+    "ctypes memcmp symbol lookup (no I/O)"
+  ],
+  "cache": "thread-local _cache; clear_cache() releases calling thread entry",
+  "fallback": "any ineligible/numerically-failed call delegates verbatim to ot.sinkhorn (Stock POT)",
+  "log_true_behavior": "_eligible rejects log=True -> automatic fallback to Stock POT",
+  "installed_source_sha256": "89bbe01cf84660e76994d6055fee5e2a5d35ca23541b41cd4d72a4696e49500a",
+  "wheel_sha256_rechecked": "d7099ea4dbad90242bf7318e2235c18cad579e43d3312faa8bfc76e78c854759",
+  "upstream_copy_sha256": "d7099ea4dbad90242bf7318e2235c18cad579e43d3312faa8bfc76e78c854759",
+  "status": "VERIFIED \u2014 hash, RECORD, static audit, isolated install and import all passed"
+}

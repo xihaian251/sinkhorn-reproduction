@@ -1,0 +1,19 @@
+POT 0.9.7.post1, NumPy 2.4.6 (isolated venv), adapter residual_sinkhorn 0.2.0 (installed wheel)
+
+[1] ordinary positive input: tiny_8x8
+  A: shape=(8, 8) mass=1.000000000000 row_l2=5.76e-17 col_l2=4.78e-13
+  B: shape=(8, 8) mass=1.000000000000 row_l2=0.00e+00 col_l2=4.78e-13
+  C: shape=(8, 8) mass=1.000000000000 row_l2=7.21e-17 col_l2=7.51e-10
+
+[2] long-iteration fixture: cold_64x128_0.01 (1391 iterations)
+  A: shape=(64, 128) mass=1.000000000000 row_l2=2.73e-17 col_l2=9.91e-08
+  B: shape=(64, 128) mass=1.000000000000 row_l2=2.38e-17 col_l2=9.91e-08
+  C: shape=(64, 128) mass=1.000000000000 row_l2=2.38e-17 col_l2=9.91e-08
+
+[3] zero-mass negative control (A and B must stay identical)
+  A: warnings=2 finite=True
+  B: warnings=2 finite=True
+  C: warnings=2 finite=True
+  A vs B bitwise equal; TV(A,C)=0.00e+00 (delegated to stock POT)
+
+PASS: smoke test completed

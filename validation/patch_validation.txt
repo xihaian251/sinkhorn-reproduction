@@ -1,0 +1,33 @@
+Hardened Candidate A patch validation (Phase XXXVI)
+=====================================================
+
+Target: POT 0.9.7.post1 source tree, file ot/bregman/_sinkhorn.py.
+
+1. git apply --check <patch>      -> PASS (clean tree, no conflicts)
+2. git apply <patch>              -> PASS
+3. Candidate module construction:
+   - copy pristine ot/bregman/_sinkhorn.py to ot/bregman/_sinkhorn_candidate.py
+   - apply the same patch hunks to the candidate copy
+   - pristine stock file sha256 = 71ee6030e5dffc4dff9b0200a8d2f2317da5e2546102e0f478d1b247bafe2592
+   - resulting candidate sha256 = 586f71bb1a80af5260139df663387df96f301d7a5034f6a2ea2975c75e87ea61
+   - matches the hash recorded in data/processed/phase32_config.json for B.
+
+Line-ending note: the historical benchmark tree used CRLF checkouts; a fresh
+POSIX-style checkout uses LF. After normalizing the fresh candidate copy to CRLF
+its sha256 matches the historical value byte-for-byte. The Python source content
+is identical under `diff --strip-trailing-cr`. No logical difference exists.
+
+4. Compatibility regression (data/raw/zero_mass_regression.csv):
+   14 unsupported-input cases. 10 are bitwise identical to stock POT; the 4
+   remaining cases (nonfinite_cost, numItermax_1, stopThr_large, extreme_reg)
+   differ by at most 6.94e-18 in max absolute plan entry, which is float64
+   rounding at degenerate/large-reg settings, not a fast-path behaviour change.
+   The frozen CSV and a clean-tree recomputation
+   (validation/zero_mass_regression_recomputed.csv) agree row-for-row.
+
+5. Smoke test on a clean tree (validation/smoke_test_output.txt):
+   - ordinary positive input (tiny_8x8): A/B/C finite, mass 1
+   - long-iteration fixture (cold_64x128_0.01): A/B/C finite, mass 1
+   - zero-mass negative control: A and B bitwise identical; C delegates to stock (TV=0)
+
+The patch contains no early stopping, no cross-call cache, and no PR #913 content.

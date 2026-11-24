@@ -1,0 +1,2 @@
+case,eligible,kernel_min,fast_path_result,tv_vs_stock,conclusion
+true_kernel_underflow_reg1_M7000,True,0.0,None(fallback),0.0,adapter correctly delegates to Stock POT when Gibbs kernel underflows

@@ -1,0 +1,8 @@
+case,eligible,dense_fast_path_ok,path,tv_vs_stock,error,stock_warnings
+zero_mass_marginal,True,False,fallback,0.0,,divide by zero encountered in divide
+float32,False,,fallback,0.0,,
+multi_target,False,,fallback,0.0,,
+warmstart,False,,fallback,0.0,,
+noncontiguous_M,False,,fallback,0.0,,
+kernel_underflow,True,True,fast,9.962524727538667e-17,,
+nonfinite_cost,True,False,fallback,0.0,,

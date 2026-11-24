@@ -1,0 +1,71 @@
+diff --git a/ot/bregman/_sinkhorn.py b/ot/bregman/_sinkhorn.py
+index 1521123..84c3717 100644
+--- a/ot/bregman/_sinkhorn.py
++++ b/ot/bregman/_sinkhorn.py
+@@ -620,15 +620,40 @@ def sinkhorn_knopp(
+ 
+     K = nx.exp(M / (-reg))
+ 
+-    Kp = (1 / a).reshape(-1, 1) * K
++    # P29 hardened fast path: only single, dense, C-contiguous, strictly
++    # positive, finite NumPy float64 inputs with a strictly positive finite
++    # Gibbs kernel.  Everything else keeps the historical path verbatim,
++    # including its warnings, exceptions and numerical rollback semantics.
++    fast_path = (
++        type(a) is np.ndarray and type(b) is np.ndarray and type(M) is np.ndarray
++        and a.dtype == b.dtype == M.dtype == np.float64
++        and a.ndim == 1 and b.ndim == 1 and M.ndim == 2
++        and M.shape == (dim_a, dim_b)
++        and a.flags.c_contiguous and b.flags.c_contiguous and M.flags.c_contiguous
++        and n_hists == 0 and warmstart is None
++        and np.isfinite(reg) and reg > 0
++        and np.all(np.isfinite(a)) and np.all(a > 0)
++        and np.all(np.isfinite(b)) and np.all(b > 0)
++        and np.all(np.isfinite(M))
++        and np.all(np.isfinite(K)) and np.all(K > 0)
++    )
++    if fast_path:
++        Kp = None
++        KtU = nx.dot(K.T, u)
++    else:
++        Kp = (1 / a).reshape(-1, 1) * K
++        KtU = None
+ 
+     err = 1
+     for ii in range(numItermax):
+         uprev = u
+         vprev = v
+-        KtransposeU = nx.dot(K.T, u)
++        KtransposeU = KtU if fast_path else nx.dot(K.T, u)
+         v = b / KtransposeU
+-        u = 1.0 / nx.dot(Kp, v)
++        if fast_path:
++            u = a / nx.dot(K, v)
++        else:
++            u = 1.0 / nx.dot(Kp, v)
+ 
+         if (
+             nx.any(KtransposeU == 0)
+@@ -646,7 +671,12 @@ def sinkhorn_knopp(
+         if ii % 10 == 0:
+             # we can speed up the process by checking for the error only all
+             # the 10th iterations
+-            if n_hists:
++            if fast_path:
++                # K^T u for the updated u is available; reuse it instead of
++                # a separate dense contraction.
++                KtU_new = nx.dot(K.T, u)
++                tmp2 = KtU_new * v
++            elif n_hists:
+                 tmp2 = nx.einsum("ik,ij,jk->jk", u, K, v)
+             else:
+                 # compute right marginal tmp2= (diag(u)Kdiag(v))^T1
+@@ -661,6 +691,8 @@ def sinkhorn_knopp(
+                 if ii % 200 == 0:
+                     print("{:5s}|{:12s}".format("It.", "Err") + "\n" + "-" * 19)
+                 print("{:5d}|{:8e}|".format(ii, err))
++        if fast_path:
++            KtU = KtU_new if ii % 10 == 0 else nx.dot(K.T, u)
+     else:
+         if warn:
+             warnings.warn(

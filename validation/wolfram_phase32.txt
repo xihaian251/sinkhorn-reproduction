@@ -1,0 +1,29 @@
+Wolfram 15.0.1 local persistent kernel — PHASE32 P7 verification
+Tool: Wolfram 15.0.1 local kernel, evaluated through the wolfram-local command-line helper (--json).
+
+[1] TV identity  TV[P,Q] = 1/2 Sum(|P_ij - Q_ij|)
+IN : TV[P_,Q_]:=1/2 Total[Abs[Flatten[P-Q]]]; P={{0.6,0.4},{0.3,0.7}}; Q={{0.5,0.5},{0.5,0.5}}; {TV[P,Q],TV[P,P],TV[P,{{1,0},{0,1}}]}
+OUT: {0.29999999999999993, 0., 0.7000000000000001}
+Conclusion: identity verified numerically; TV(P,P)=0 and TV between disjoint support = 1.
+
+[2] Planted optimum scaling / fixed point
+K = Exp[{{-1,-2},{-3,-4}}]//N; u={1.2,0.8}; v={0.9,1.1};
+W = K*Outer[Times,u,v]; Q = W/Total[W,2]; a = Total[Q,{2}]; b = Total[Q,1];
+r = First[a/u/(K.v)]; s = First[b/v/(Transpose[K].u)];
+{Chop[a/u-r(K.v)], Chop[b/v-s(Transpose[K].u)], r, s}
+OUT: {{0,0},{0,0},1.5925676225047884,1.5925676225047884}
+Conclusion: Q = diag(u) K diag(v) / Z satisfies the Sinkhorn fixed point equations up to ONE common
+normalization constant r = s (the normalization of Q by Z). This is exactly the planted() construction
+in fixtures.py: Q=(u[:,None]*K)*v[None,:]; Q/=Q.sum(); a=Q.sum(1); b=Q.sum(0).
+
+[3] Scaling invariance of the normalized optimal plan
+off=Log[2]; Q2=(K*Outer[Times,u*Exp[off],v/Exp[off]])/Total[K*Outer[Times,u*Exp[off],v/Exp[off]],2];
+{Chop[Total[Q2,{2}]-a], Chop[Total[Q2,1]-b], 1/2 Total[Abs[Flatten[Q2-Q]]]}
+OUT: {{0,0},{0,0},0.}
+Conclusion: any reciprocal scaling u->c u, v->v/c leaves the normalized plan Q unchanged; the planted
+Q is therefore the entropy-regularized optimal plan for its own row/column marginals (unique interior
+solution for a strictly positive Gibbs kernel). No re-derivation of Issue #934 theory was attempted.
+
+Caveat: these are exact/numeric identities for a small strictly positive kernel in Wolfram arbitrary
+precision arithmetic. The benchmark's float64 Q has residual row/column error ~1e-16..1e-13 and
+TV-to-planted values reported in phase32_accuracy.csv are float64 estimates, not theoretical bounds.

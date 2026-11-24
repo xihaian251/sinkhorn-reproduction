@@ -1,0 +1,44 @@
+{
+  "python": "3.13.1",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "pot_version": "0.9.7.post1",
+  "pot_source": "POT 0.9.7.post1 source tree (obtain from the official POT repository tag)",
+  "source_sha256": {
+    "A": "71ee6030e5dffc4dff9b0200a8d2f2317da5e2546102e0f478d1b247bafe2592",
+    "B": "586f71bb1a80af5260139df663387df96f301d7a5034f6a2ea2975c75e87ea61",
+    "C": "see environment/wheel_audit.json (installed wheel source)"
+  },
+  "adapter": {
+    "dist_version": "0.2.0",
+    "wheel_sha256": "d7099ea4dbad90242bf7318e2235c18cad579e43d3312faa8bfc76e78c854759",
+    "installed_to": "isolated virtual environment (machine-specific path omitted)",
+    "import": "residual_sinkhorn.sinkhorn",
+    "memcmp": null,
+    "windows_shim": "CDLL(None) -> OSError -> author's np.array_equal fallback",
+    "timing_calls_use_log": false,
+    "iteration_diagnostic": "internal _dense(details=True); log=True never used for C"
+  },
+  "common_kwargs": {
+    "numItermax": 3000,
+    "stopThr": 1e-07
+  },
+  "timing_protocol": {
+    "seed": 20261129,
+    "warmup": 3,
+    "repeats": 17,
+    "shuffled_order": true,
+    "cold": "RS.clear_cache() before each timed C call (outside timing)",
+    "warm": "C primed twice, cache retained; A/B have no cross-call cache",
+    "blas_threads": 1,
+    "output_contract": "full dense plan"
+  },
+  "raw_sha256": {
+    "phase32_cold_raw.csv": "0c19143dff6798e26ddc37a1edd23a4127dd4c2f01645370934603765323b3d0",
+    "phase32_warm_raw.csv": "4b7ac3b254970665a9712f457b58b0cb044049f0990007ea1cfe1c15b13a43da",
+    "phase32_accuracy.csv": "177f4757d007944570ad8e37bd157477405f0db2d3f4552a5eec70eb7e720e54",
+    "phase32_marginals_raw.csv": "8d4123220c3949d66c4a513002e8bc301777e8b818637c9e54437118d11ead6f",
+    "phase32_fallback_audit.csv": "95b98ef73b66bfeb33fada559567ef8dc57c9ef0acf03dd8478dc004889765d3",
+    "fixtures_097post1.npz": "413c630b32c6bf1032381d564dd970549fd5017c97081428256ed21023a7e81a"
+  }
+}

@@ -1,0 +1,15 @@
+case,status,bitwise_equal,max_abs_diff,warn_A,warn_B,finite_A,finite_B
+zero_source,OK,True,0.0,Sinkhorn did not converge. You might want to increase the number of iterations `numItermax` or the regularization parameter `reg`.|divide by zero encountered in divide,Sinkhorn did not converge. You might want to increase the number of iterations `numItermax` or the regularization parameter `reg`.|divide by zero encountered in divide,True,True
+zero_target,OK,True,0.0,Sinkhorn did not converge. You might want to increase the number of iterations `numItermax` or the regularization parameter `reg`.,Sinkhorn did not converge. You might want to increase the number of iterations `numItermax` or the regularization parameter `reg`.,True,True
+float32,OK,True,0.0,,,True,True
+multi_hist,OK,True,0.0,,,True,True
+warmstart,OK,True,0.0,,,True,True
+fortran_cost,OK,True,0.0,,,True,True
+strided_marginal,OK,True,0.0,,,True,True
+kernel_underflow,OK,True,0.0,Warning: numerical errors at iteration 0|divide by zero encountered in divide|invalid value encountered in dot,Warning: numerical errors at iteration 0|divide by zero encountered in divide|invalid value encountered in dot,True,True
+nonfinite_cost,OK,False,6.938893903907228e-18,,,True,True
+nonfinite_marginal,OK,True,0.0,Warning: numerical errors at iteration 0|divide by zero encountered in divide,Warning: numerical errors at iteration 0|divide by zero encountered in divide,True,True
+numItermax_1,OK,False,3.469446951953614e-18,Sinkhorn did not converge. You might want to increase the number of iterations `numItermax` or the regularization parameter `reg`.,Sinkhorn did not converge. You might want to increase the number of iterations `numItermax` or the regularization parameter `reg`.,True,True
+stopThr_large,OK,False,3.469446951953614e-18,,,True,True
+extreme_reg,OK,False,1.3010426069826053e-18,,,True,True
+decisive_zero_identity,OK,True,0.0,Warning: numerical errors at iteration 0|divide by zero encountered in divide|invalid value encountered in multiply,Warning: numerical errors at iteration 0|divide by zero encountered in divide|invalid value encountered in multiply,True,True

@@ -1,0 +1,10 @@
+{
+  "issue": "https://github.com/PythonOT/POT/issues/934",
+  "reproduction_request_comment": "https://github.com/PythonOT/POT/issues/934#issuecomment-7124596382",
+  "author_0_2_0_wheel": "https://raw.githubusercontent.com/hys-ops/lloyd-nonconvergence/b0b262330aa56c3583371795e1fe68c7138dcbe2/notes/sinkhorn/downloads/residual_sinkhorn-0.2.0-py3-none-any.whl",
+  "author_0_2_0_wheel_sha256": "d7099ea4dbad90242bf7318e2235c18cad579e43d3312faa8bfc76e78c854759",
+  "author_sinkhorn_notes": "https://github.com/hys-ops/lloyd-nonconvergence/blob/main/notes/sinkhorn/README.md",
+  "author_0_2_1_release_note": "https://github.com/hys-ops/lloyd-nonconvergence/blob/main/notes/sinkhorn/README.md#residual-sinkhorn-021-windows-import-fix",
+  "pot_release_tag": "https://github.com/PythonOT/POT/tree/0.9.7.post1",
+  "notes": "0.2.0 is the version used for the recorded results. 0.2.1 is an author-provided later fix and was not used for the historical experiment. No third-party code is redistributed in this package."
+}

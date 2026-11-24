@@ -1,0 +1,33 @@
+=== verify_fixtures ===
+OK: 32/32 frozen fixture arrays match recorded SHA-256 hashes
+
+=== postprocess ===
+=== Phase XXXII recomputed D1 geometric means ===
+COLD      A/B  D1=1.161068  Y_faster=8/8
+COLD      A/C  D1=1.568085  Y_faster=8/8
+COLD      B/C  D1=1.350554  Y_faster=8/8
+WARM      A/B  D1=1.028859  Y_faster=5/8
+WARM      A/C  D1=1.629013  Y_faster=8/8
+WARM      B/C  D1=1.583321  Y_faster=8/8
+MARGINALS A/B  D1=1.045698  Y_faster=1/3
+MARGINALS A/C  D1=1.834897  Y_faster=3/3
+MARGINALS B/C  D1=1.754710  Y_faster=3/3
+
+=== Iteration counts (timing-free diagnostic) ===
+tiny_8x8             A=  21 B=  21 C=  15
+wide_32x512          A=  21 B=  21 C=  21
+tall_512x32          A=  11 B=  11 C=  11
+square_300x300       A=  11 B=  11 C=  11
+cold_64x128_0.01     A=1391 B=1391 C=1391
+illcond_150x600      A=  11 B=  11 C=  11
+moderate_400x100     A=  21 B=  21 C=  21
+warmish_90x90        A=  11 B=  11 C=   8
+
+=== verify_release ===
+SKIP: no local wheel supplied; expected SHA-256 = d7099ea4dbad90242bf7318e2235c18cad579e43d3312faa8bfc76e78c854759
+OK: phase32_cold_raw.csv sha256 verified
+OK: phase32_warm_raw.csv sha256 verified
+OK: phase32_accuracy.csv sha256 verified
+OK: phase32_marginals_raw.csv sha256 verified
+OK: phase32_fallback_audit.csv sha256 verified
+OK: no machine-specific absolute paths or local identifiers in text files

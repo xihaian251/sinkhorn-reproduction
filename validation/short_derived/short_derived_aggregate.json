@@ -1,0 +1,101 @@
+{
+  "primary": "D1 = median(X_i)/median(Y_i), geomean across fixtures",
+  "secondary": "D2 = median(X_i/Y_i)",
+  "bootstrap": {
+    "seed": 20261130,
+    "repeats": 20000,
+    "unit": "paired repeat index"
+  },
+  "pools": "COLD and WARM are independent; never pooled",
+  "aggregate": {
+    "COLD": {
+      "A/B_D1_ratio_of_medians": {
+        "geomean": 1.0689057221572245,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.0501607799489765,
+        "max": 1.0879852539493717
+      },
+      "A/B_D2_median_paired_ratio": {
+        "geomean": 1.0467694611667924,
+        "n_fixtures": 2,
+        "count_Y_faster": 1,
+        "min": 0.9586766484690213,
+        "max": 1.1429571238448957
+      },
+      "A/C_D1_ratio_of_medians": {
+        "geomean": 1.4662600274829005,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.417227150091244,
+        "max": 1.516989332342201
+      },
+      "A/C_D2_median_paired_ratio": {
+        "geomean": 1.4352640880693839,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.3792229744262379,
+        "max": 1.4935822856044005
+      },
+      "B/C_D1_ratio_of_medians": {
+        "geomean": 1.371739337800298,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.3495334972994342,
+        "max": 1.3943105633422421
+      },
+      "B/C_D2_median_paired_ratio": {
+        "geomean": 1.3610266412055558,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.3495334972994342,
+        "max": 1.3726176651251127
+      }
+    },
+    "WARM": {
+      "A/B_D1_ratio_of_medians": {
+        "geomean": 0.8522071952843671,
+        "n_fixtures": 2,
+        "count_Y_faster": 0,
+        "min": 0.8402298817891061,
+        "max": 0.864355243053275
+      },
+      "A/B_D2_median_paired_ratio": {
+        "geomean": 0.8342520367237487,
+        "n_fixtures": 2,
+        "count_Y_faster": 0,
+        "min": 0.7373391653552299,
+        "max": 0.9439027431052309
+      },
+      "A/C_D1_ratio_of_medians": {
+        "geomean": 1.5430445945731928,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.5006415240041255,
+        "max": 1.5866458329691022
+      },
+      "A/C_D2_median_paired_ratio": {
+        "geomean": 1.6089177613265284,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.5866458329691022,
+        "max": 1.6315023232802186
+      },
+      "B/C_D1_ratio_of_medians": {
+        "geomean": 1.810644879685984,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.7859892352421474,
+        "max": 1.8356408961717934
+      },
+      "B/C_D2_median_paired_ratio": {
+        "geomean": 1.928575167337949,
+        "n_fixtures": 2,
+        "count_Y_faster": 2,
+        "min": 1.728464436826338,
+        "max": 2.1518534583805806
+      }
+    },
+    "MARGINALS": {}
+  }
+}
