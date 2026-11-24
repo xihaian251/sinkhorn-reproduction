@@ -1,0 +1,6 @@
+# Keep byte-level checksums in MANIFEST.sha256 reproducible on all platforms.
+# Text files are stored and checked out with LF; binary fixtures stay untouched.
+* text=auto eol=lf
+*.npz binary
+*.pyd binary
+*.whl binary
